@@ -1,0 +1,185 @@
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage{cmbright}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage[sf]{libertine}
+\usepackage{microtype}
+\usepackage{paracol}
+\usepackage{supertabular}
+\usepackage{titlesec}
+\hypersetup{colorlinks, urlcolor=black, linkcolor=black}
+
+
+
+% Geometry
+\geometry{hmargin=1.75cm, vmargin=2.5cm}
+\columnratio{0.65, 0.35}
+\setlength\columnsep{0.05\textwidth}
+\setlength\parindent{0pt}
+\setlength{\smallskipamount}{8pt plus 3pt minus 3pt}
+\setlength{\medskipamount}{16pt plus 6pt minus 6pt}
+\setlength{\bigskipamount}{24pt plus 8pt minus 8pt}
+
+% Style
+\pagestyle{empty}
+\titleformat{\section}{\scshape\LARGE\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{\bigskipamount}{\smallskipamount}
+\newcommand{\heading}[2]{\centering{\sffamily\Huge #1}\\\smallskip{\large{#2}}}
+\newcommand{\entry}[4]{{{\textbf{#1}}} \hfill #3 \\ #2 \hfill #4}
+\newcommand{\tableentry}[3]{\textsc{#1} & #2\expandafter\ifstrequal\expandafter{#3}{}{\\}{\\[6pt]}}
+
+\begin{document}
+
+\vspace*{\fill}
+
+\begin{paracol}{2}
+
+% Name & headline
+\heading{William Campos Gambardella Ferreira}{}
+
+\switchcolumn
+
+% Identity card
+\vspace{0.01\textheight}
+\begin{supertabular}{ll}
+  \footnotesize\faPhone & +351 910 502 935 \\
+  \footnotesize\faEnvelope & \href{mailto:william@gambardella.eng.br}{william@gambardella.eng.br} \\
+  \footnotesize\faLinkedin & \href{https://www.linkedin.com/in/william-gambardella-62b502a1}{william-gambardella-62b502a1} \\
+  \footnotesize\faGithub & \href{https://github.com/gambardellawill/cv}{gambardellawill} \\
+\end{supertabular}
+
+\bigskip
+\switchcolumn*
+
+\section{objectives}
+
+\begin{itemize}
+  \item DevOps Enginner, currently transitioning to an Operations-oriented career path.
+\end{itemize}
+
+\section{education}
+
+\entry{Universidade Federal de Uberlândia}{Bachelor’s degree in Electrical Engineering}{Uberlândia, Brazil}{2011 -- 2017}
+\begin{itemize}
+  \item Special studies certification in Telecommunications Engineering
+\end{itemize}
+
+\switchcolumn
+
+\section{skills}
+\begin{supertabular}{rl}
+  \tableentry{\footnotesize\faCode}{Python \textperiodcentered{} Shell scripting (bash)}{}
+  \tableentry{}{Java \textperiodcentered{} Git \textperiodcentered{} Linux}{}
+  \tableentry{}{}{}
+
+  \tableentry{\footnotesize\faCloud}{AWS \textperiodcentered{} Docker \textperiodcentered Kubernetes}{}
+  \tableentry{}{Azure \textperiodcentered{} Terraform \textperiodcentered{} Ansible}{}
+  \tableentry{}{}{}
+
+  \tableentry{\footnotesize\faLanguage}{Portuguese \textperiodcentered{} native}{}
+  \tableentry{}{English \textperiodcentered{} proficient}{}
+  \tableentry{}{French \textperiodcentered{} intermediate}{}
+  \tableentry{}{Spanish \textperiodcentered{} intermediate}{}
+  \tableentry{}{Hebrew \textperiodcentered{} beginner}{}
+\end{supertabular}
+
+\switchcolumn*
+
+\section{experience}
+
+\entry{Aubay Portugal}{DevOps Consultant}{Porto, Portugal}{Jan. 2022}
+\begin{itemize}[noitemsep,leftmargin=3.5mm,rightmargin=0mm,topsep=6pt]
+  \item Client: Galp Energia S.A.
+  \item Management and maintenance of build servers and CI/CD pipelines
+  \item Development of custom solutions for maintenance and monitoring Outsystems platform cloud-based
+  infrastructure.
+  \item \textbf{Technology stack:} Python, GitHub, Terraform, Outsystems, Shell scripting
+\end{itemize}
+
+\medskip
+
+\entry{Zup I.T.}{Infrastructure Analyst (DevOps/SRE)}{Uberlândia, Brazil}{Jul. 2020 -- Jan. 2022}
+\begin{itemize}[noitemsep,leftmargin=3.5mm,rightmargin=0mm,topsep=6pt]
+  \item Management, maintenance and support of multi-cloud
+  infrastructure for clients in the telecommunications industry
+  \item Assisted the development of new products for the company as DevOps
+  infrastructure analyst.
+  \item Performed the role of on-call Operations analyst working on the mitigation
+  of operational incidents.
+  \item \textbf{Technology stack:} AWS (EC2; S3; RDS (MySQL); Apache Kafka
+  (MSK); CodeArtifact; VPC; EKS), Azure (AKS;
+  Vms; Virtual Network), Grafana, Zabbix, EFK
+  stack, Terraform, Docker Swarm, Kubernetes, Ansible, Python, Shell scripting,
+  KVM, HAProxy, OpenSSL, nginx
+\end{itemize}
+
+\medskip
+
+\entry{Vitta}{Junior Infrastructure Analyst II (DevOps)}{Uberlândia, Brazil}{Sep. 2019 -- Jul. 2020}
+\begin{itemize}[noitemsep,leftmargin=3.5mm,rightmargin=0mm,topsep=6pt]
+  \item Management and support of AWS cloud-based infrastructure for the company’s then flagship product.
+  \item Code testing, revision and troubleshooting.
+  \item Management of Jenkins build orchestration servers and pipeline automation.
+  \item \textbf{Technology stack:} AWS (EC2; ECS; Elastic Beanstalk; SNS; SQS; S3;
+  Lambda; RDS (MySQL); CloudFormation), MongoDB, Grafana, ELK stack, Apache Kafka,
+  Terraform, Docker, Bitbucket, Ansible, Kubernetes, Java, JavaScript, TypeScript,
+  Jenkins, Groovy, Python, Git.
+\end{itemize}
+
+\medskip
+
+\entry{Sankhya Gestão em Negócios}{Software Development Analyst (DevOps)}{Uberlândia, Brazil}{Mar. 2019 -- Sep. 2019}
+\begin{itemize}[noitemsep,leftmargin=3.5mm,rightmargin=0mm,topsep=6pt]
+  \item Management of Jenkins build orchestration servers.
+  \item Development of automation software supporting the build and
+  deployment processes in order to yield better delivery times across
+  the development pipeline.
+  \item Workflow standardization.
+  \item Synchronizing the VCS with the company’s ERP software
+  \item \textbf{Technology stack:} Java, Groovy, Jenkins, SVN, Oracle, PL/SQL, MS SQL Server, in-house plug-
+  ins and extensions.
+\end{itemize}
+
+\medskip
+
+\entry{iVendas - Yandeh}{Embedded software developer}{Uberlândia, Brazil}{Oct. 2017 -- Dec. 2018}
+\begin{itemize}[noitemsep,leftmargin=3.5mm,rightmargin=0mm,topsep=6pt]
+  \item Performance testing and physical data analysis for benchmarking purposes, hardware and
+  remote software maintenance of single-board computers.
+  \item Development and maintenance of embedded business data-collection network-attached devices
+  developed for the retail industry.
+  \item Development of structured queries for different SQL databases and data indexation and
+  integration for the Business Intelligence team.
+  \item \textbf{Technology stack:} Python, ANSI C, Shell scripting, DBeaver, MySQL, PostgreSQL,
+  Firebird, MS SQL Server.
+\end{itemize}
+
+\switchcolumn
+
+\section{certifications}
+\begin{supertabular}{rl}
+  \tableentry{2021}{\textbf{AWS SysOps Administrator}}{}
+  \tableentry{}{Associate}{}
+  \tableentry{}{ID: D2QZ9TMJDB44Q3WR}{spaceafter}
+  \tableentry{2020}{\textbf{Azure Fundamentals}}{}
+  \tableentry{}{AZ-900}{}
+  \tableentry{}{ID: H599-2834}{spaceafter}
+  \tableentry{2020}{\textbf{DevOps Essentials (DEPC)}}{}
+  \tableentry{}{Certiprof}{}
+  \tableentry{}{ID: 43558287}{}
+  \tableentry{2020}{\textbf{Scrum Foundation (SFPC)}}{}
+  \tableentry{}{Certiprof}{}
+  \tableentry{}{ID: TLSZZKTHKH-MMRXPSHT-RPFHHPSTPF}{}
+\end{supertabular}
+
+\bigskip
+
+\end{paracol}
+
+\vspace*{\fill}
+
+\end{document}
