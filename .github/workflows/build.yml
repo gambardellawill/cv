@@ -1,0 +1,43 @@
+name: Generate CV
+
+on:
+  push:
+    tags:
+      - "v.*"
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          sparse-checkout: |
+            cv.tex
+      - name: Update dependencies
+        run: sudo apt-get update -q
+      - name: Install LaTeX
+        run: >-
+          sudo apt-get install -yq texlive texlive-fonts-extra
+      - name: Compile CV from source
+        run:
+          pdflatex cv.tex
+      - name: Create release
+        uses: actions/create-release@v1
+        id: create_release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload CV to release
+        uses: actions/upload-release-asset@v1
+        id: upload-asset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_name: cv.pdf
+          asset_path: ./cv.pdf
+          asset_content_type: application/pdf
